@@ -1,3 +1,5 @@
+import javax.print.DocFlavor;
+
 public class Hello {
 
     public static void main(String[] args) {
@@ -13,5 +15,13 @@ public class Hello {
     public int returnOnePlusValue(int value, int value2) {
         return 1 + value + value2;
     }
+
+
+    // alt ctrl v
+
+    public void newCoolMethod() {
+        int cokolwiek = returnOnePlusValue(3);
+    }
+
 
 }
