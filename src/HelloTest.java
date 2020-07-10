@@ -6,14 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HelloTest {
 
 //    @Test
-//    void main() {
-//
+//    void returnOnePlusValue() {
+//        Hello hello = new Hello();
+//        assertEquals(5, hello.returnOnePlusValue(2));
 //    }
-
-    @Test
-    void returnOnePlusValue() {
-        Hello hello = new Hello();
-        assertEquals(5, hello.returnOnePlusValue(2));
-    }
 
 }

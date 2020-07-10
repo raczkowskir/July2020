@@ -5,31 +5,46 @@ import java.sql.SQLOutput;
 
 public class Hello {
 
-    public static void main(String[] args) {
-        /*System.out.println("My first impression :) ");
-        Hello hello = new Hello();
-        System.out.println(hello.returnOnePlusValue(2));*/
+    private static GenericTypes<?> myGt;
+    public Integer unicId = 99;
 
+    public static void main(String[] args) {
         GenericTypes gt = new GenericTypes<>(5);
 
         System.out.println(gt.getMyVariable());
-        gt.setMyVariable("Ciekawa sprawa"); //
+        gt.setMyVariable("Interesting idea");
         System.out.println(gt.getMyVariable());
+
+        gt.setMyVariable((2+3-7+4*2));
+        printGt(gt);
+
+        printGt();
+
+        Hello hello1 = null;
+        Hello hello2 = new Hello();
+        hello2.unicId = 10;
+
+        System.out.println("Is hello2 equals hello1? " + hello2.equals(hello1));
+
     }
 
-    public int returnOnePlusValue(int value) {
-        return returnOnePlusValue(value, 2);
+
+
+    protected static void printGt() {
+        printGt(new GenericTypes<>(9));
     }
 
-    public int returnOnePlusValue(int value, int value2) {
-        return 1 + value + value2;
+    @Override
+    public boolean equals(Object obj) {
+        Hello hello = (Hello) obj;
+
+        return (this.unicId.equals(hello.unicId)) && (this.equals(hello));
     }
 
-
-    // alt ctrl v
-
-    public void newCoolMethod() {
-        int cokolwiek = returnOnePlusValue(3);
+    public static void printGt(GenericTypes<?> myGt) {
+        Hello.myGt = myGt;
+        System.out.println(myGt.getMyVariable());
     }
+
 
 }
