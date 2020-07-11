@@ -14,21 +14,21 @@ public class Hello {
         System.out.println(gt.getMyVariable());
         gt.setMyVariable("Interesting idea");
         System.out.println(gt.getMyVariable());
+        System.out.println(gt.getMyVariable());
+        System.out.println(gt.getMyVariable());
+        System.out.println(gt.getMyVariable());
 
-        gt.setMyVariable((2+3-7+4*2));
+        gt.setMyVariable((2 + 3 - 7 + 4 * 2));
         printGt(gt);
 
         printGt();
 
         Hello hello1 = null;
         Hello hello2 = new Hello();
-        hello2.unicId = 10;
+        hello2.unicId = 4;
 
-        System.out.println("Is hello2 equals hello1? " + hello2.equals(hello1));
-
+        while (true) System.out.println("Is hello2 equals hello1? " + hello2.equals(hello1));
     }
-
-
 
     protected static void printGt() {
         printGt(new GenericTypes<>(9));
