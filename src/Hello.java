@@ -13,10 +13,8 @@ public class Hello {
 
         System.out.println(gt.getMyVariable());
         gt.setMyVariable("Interesting idea");
-        System.out.println(gt.getMyVariable());
-        System.out.println(gt.getMyVariable());
-        System.out.println(gt.getMyVariable());
-        System.out.println(gt.getMyVariable());
+        System.out.println("I spent 1h for watching YT stream with some tips for intelliJ and angaing with keymap.");
+
 
         gt.setMyVariable((2 + 3 - 7 + 4 * 2));
         printGt(gt);
@@ -27,7 +25,12 @@ public class Hello {
         Hello hello2 = new Hello();
         hello2.unicId = 4;
 
-        while (true) System.out.println("Is hello2 equals hello1? " + hello2.equals(hello1));
+        boolean condition = true;
+
+        while (condition) {
+            System.out.println("Is hello2 equals hello2? " + hello2.equals(hello2));
+            condition = false;
+        }
     }
 
     protected static void printGt() {
@@ -38,8 +41,8 @@ public class Hello {
     public boolean equals(Object obj) {
         Hello hello = (Hello) obj;
 
-        return (this.unicId.equals(hello.unicId)) && (this.equals(hello));
-    }
+        return (super.equals(hello.unicId)) && (super.equals(hello));
+     }
 
     public static void printGt(GenericTypes<?> myGt) {
         Hello.myGt = myGt;
