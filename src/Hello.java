@@ -1,6 +1,7 @@
 import org.w3c.dom.ls.LSOutput;
 
 import javax.print.DocFlavor;
+import java.io.Console;
 import java.sql.SQLOutput;
 
 public class Hello {
@@ -11,13 +12,23 @@ public class Hello {
     public static void main(String[] args) {
         GenericTypes gt = new GenericTypes<>(5);
 
+
+        System.out.println(args[2] + "Raki");
+
         System.out.println(gt.getMyVariable());
         gt.setMyVariable("Interesting idea");
         System.out.println("I spent 1h for watching YT stream with some tips for intelliJ and angaing with keymap.");
 
+        System.out.println("$DATE$ Raki TIME$");
 
         gt.setMyVariable((2 + 3 - 7 + 4 * 2));
         printGt(gt);
+
+        // System.exit(9);
+
+//        System.out.print("whotever");
+//        System.lineSeparator();
+//        System.out.print("whotever");
 
         printGt();
 
