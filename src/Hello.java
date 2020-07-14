@@ -1,17 +1,18 @@
-import org.w3c.dom.ls.LSOutput;
-
-import javax.print.DocFlavor;
-import java.io.Console;
-import java.sql.SQLOutput;
+import org.jetbrains.annotations.NotNull;
 
 public class Hello {
 
     private static GenericTypes<?> myGt;
     public Integer unicId = 99;
 
-    public static void main(String[] args) {
+
+
+    public static void main(String @NotNull [] args) {
         GenericTypes gt = new GenericTypes<>(5);
 
+        //TODO add more fun
+
+        // FIXME now
 
         System.out.println(args[2] + "Raki");
 
@@ -28,7 +29,7 @@ public class Hello {
 
 //        System.out.print("whotever");
 //        System.lineSeparator();
-//        System.out.print("whotever");
+//        System.out.print("whatever");
 
         printGt();
 
