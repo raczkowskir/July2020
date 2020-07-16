@@ -5,32 +5,66 @@
 // System.out.println("this is a debug message");
 
 class Solution {
-    public int solution(int N) {
-        String binaryString = Integer.toBinaryString(N);
 
-        System.out.println("The value of N is:"+ N);
-        System.out.println("The binar value of N is:"+ binaryString);
+    public String cutOpeningZeros(String myString) {
+        int i = 0;
+        int stringLength = myString.length();
 
-        int gap = 0;
-        int gap2 = 0;
+        while(true) {
+            String myPrefix = myString.substring(i, i + 1);
 
-        for (int i = 0, n = binaryString.length(); i < n; i++) {
-            char c = binaryString.charAt(i);
-            if (c == '0') {
-                gap = gap + 1;
+            if (myPrefix.equals("1")) {
+                return myString.substring(i, stringLength);
             }
             else {
-                gap2 = gap;
-                gap = 0;
+                i++;
             }
-            System.out.println("The char number " + i + " is: " + c + "And gap=" + gap);
-            if (((i == 0) || (i == n - 1)) && (c == '0')) {
-                gap = 0;
+        }
+    }
+
+    public String cutClosingZeros(String myString) {
+        int i = myString.length();
+
+        while(true) {
+            String mySuffix = myString.substring(i -1, i);
+
+            if (mySuffix.equals("1")) {
+                return myString.substring(0, i);
+            }
+            else {
+                i--;
+            }
+        }
+    }
+
+    public int returnGap(String str) {
+        String strOfZeros = "0";
+        int gap = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.contains(strOfZeros)) {
+                strOfZeros = strOfZeros + "0";
+                gap = i + 1;
             }
         }
 
-        if (gap > gap2) return gap;
-        else return gap2;
+        return gap;
+    }
 
+    public int solution(int N) {
+        String binaryString = Integer.toBinaryString(N);
+        System.out.println("The value of N is:"+ N);
+        System.out.println("The binary value of N is:"+ binaryString);
+
+        String withOutPrefix = cutOpeningZeros(binaryString);
+        System.out.println("Binary string without prefixes:"+ withOutPrefix);
+        String withOutSuffix = cutClosingZeros(withOutPrefix);
+        System.out.println("Binary string without suffixes:"+ withOutSuffix);
+
+        int gap = returnGap(withOutSuffix);
+
+        System.out.println("Gap:" + gap);
+
+        return gap;
     }
 }
