@@ -6,6 +6,10 @@
 
 class Solution {
 
+    public static void main(String[] args) {
+        Solution solutionObj = new Solution();
+        System.out.println(solutionObj.solution(99999999));
+    }
     public String cutOpeningZeros(String myString) {
         int i = 0;
         int stringLength = myString.length();

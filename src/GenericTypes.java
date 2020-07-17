@@ -11,13 +11,5 @@ public class GenericTypes<T> {
 
     public void setMyVariable(T myVariable) {
         this.myVariable = myVariable;
-
-        for (Object o : ) {
-            
-        }
-        
     }
-
-
-
 }
