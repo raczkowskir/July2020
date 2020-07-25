@@ -6,9 +6,10 @@ import java.util.List;
 public class StoreItem {
 
     private String itemName;
-    private double price;
+private double price;
     private int quantity;
 
+// analysing
 
     public StoreItem(String itemName, double price, int quantity) {
         this.setItemName(itemName);
