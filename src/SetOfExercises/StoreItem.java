@@ -6,7 +6,7 @@ import java.util.List;
 public class StoreItem {
 
     private String itemName;
-private double price;
+    private double price;
     private int quantity;
 
 // analysing
@@ -18,8 +18,8 @@ private double price;
     }
 
     public static void printInvoiceHeader() {
-        System.out.println(String.format("%30s %25s %10s %25s %10s", "Item", "|", "Price($)", "|", "Qty"));
-        System.out.println(String.format("%s", "----------------------------------------------------------------------------------------------------------------"));
+        System.out.println(String.format("%30s %1s %10s %1s %10s", "Item", "|", "Price($)", "|", "Qty"));
+        System.out.println(String.format("%1$s%1$s", "-----------------------------"));
     }
 
     public static List<StoreItem> buildInvoice() {
@@ -40,10 +40,10 @@ private double price;
         return itemName;
     }
 
+
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
-
     public double getPrice() {
         return price;
     }
@@ -61,6 +61,6 @@ private double price;
     }
 
     public void printInvoice() {
-        System.out.println(String.format("%30s %25s %10.2f %25s %10s", this.getItemName(), "|", this.getPrice(), "|", this.getQuantity()));
+        System.out.println(String.format("%-30s %1s %10.2f %1s %10s", this.getItemName(), "|", this.getPrice(), "|", this.getQuantity()));
     }
 }
