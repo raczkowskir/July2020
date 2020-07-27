@@ -14,22 +14,12 @@ public class ArrayFactory {
         int[][] myNewArray2 = af.twoDimentions();
 
 
+        af.returnMatrix();
 /*        af.displayNumberFromBackWords(1234);
         af.displayStringFromBackWords("No problems.");
         af.numberToBinary(5000);
         System.out.println(af.isPalindrome("nokon"));*/
-        af.returnMatrix();
 
-    }
-
-    private void displayNumberFromBackWords(int number) {
-        String numberInString = String.valueOf(number);
-        int numberInStringLength = numberInString.length();
-
-        for (int i = 0; i < numberInStringLength; i++) {
-            System.out.println(numberInString.substring((numberInStringLength - (i + 1)), numberInStringLength - i));
-
-        }
     }
 
     private void displayStringFromBackWords(String word) {
@@ -47,6 +37,16 @@ public class ArrayFactory {
         String result = String.valueOf(buffy);
         System.out.println(result);
         return word.equals(result);
+    }
+
+    private void displayNumberFromBackWords(int number) {
+        String numberInString = String.valueOf(number);
+        int numberInStringLength = numberInString.length();
+
+        for (int i = 0; i < numberInStringLength; i++) {
+            System.out.println(numberInString.substring((numberInStringLength - (i + 1)), numberInStringLength - i));
+
+        }
     }
 
     private String numberToBinary(int number) {
