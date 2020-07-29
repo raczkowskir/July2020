@@ -7,32 +7,29 @@ import java.util.*;
 public class LambdaEx {
 
     Scanner myScanner;
-    List<String> myList;
-    List<String> myFakeList = new ArrayList<String>();
-
-    public void setMyFakeList() {
-        String [] newArray = {"tiger", "alligator", "crocodile", "snake", "monkey"};
-        myFakeList.add(0, "frog");
-        myFakeList.addAll(Arrays.asList(newArray));
-    }
+    ArrayList myList;
+    List<String> myFakeList = new ArrayList<>();
 
     public LambdaEx() {
         this.myScanner = new Scanner(System.in);
-        this.myList = new ArrayList();
+        this.myList = new  ArrayList();
         this.setMyFakeList();
     }
 
     public static void main(String[] args) {
         LambdaEx lex = new LambdaEx();
-//        lex.printMyList();
-//        lex.fillInMyList();
-//
-//        System.out.println("Works?" + lex.myList);
-//        lex.myList.sort();
-//        System.out.println("Works?" + lex.myList);
-        System.out.println(lex.myFakeList);
-        lex.myFakeList.sort(Comparator.comparingInt(String::length));
-        System.out.println(lex.myFakeList);
+        lex.printMyList();
+        lex.fillInMyList();
+
+        System.out.println(lex.myList);
+        lex.myList.sort(Comparator.comparingInt(String::length).reversed());
+        System.out.println(lex.myList);
+    }
+
+    public void setMyFakeList() {
+        String[] newArray = {"tiger", "alligator", "crocodile", "snake", "monkey"};
+        myFakeList.add(0, "frog");
+        myFakeList.addAll(Arrays.asList(newArray));
     }
 
     public void fillInMyList() {
