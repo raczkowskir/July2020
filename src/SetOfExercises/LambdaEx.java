@@ -4,7 +4,11 @@ package SetOfExercises;
 
 import java.util.*;
 
-public class LambdaEx {
+public class LambdaEx implements MyFunnyInterface {
+    @Override
+    public void doCoolShit() {
+        System.out.println("Lets jump on bungee!");
+    }
 
     Scanner myScanner;
     ArrayList myList;
@@ -12,7 +16,7 @@ public class LambdaEx {
 
     public LambdaEx() {
         this.myScanner = new Scanner(System.in);
-        this.myList = new  ArrayList();
+        this.myList = new ArrayList();
         this.setMyFakeList();
     }
 
@@ -42,6 +46,9 @@ public class LambdaEx {
     public void printMyList() {
         for (Object s : myList) {
             System.out.println(s);
+            for (Object o : myList) {
+
+            }
         }
     }
 }
