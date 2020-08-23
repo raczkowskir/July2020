@@ -6,39 +6,35 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class FunnyStuff {
+    public static void main(String[] args) throws FileNotFoundException {
+        System.out.println("New funnyStuff object creation.");
+        FunnyStuff funnyStuff = new FunnyStuff();
 
-    public static void main(String[] args) throws FileNotFoundException, InterruptedException{
-        System.out.println("Still remember how to use it!");
+        System.out.println("Creation new file, and filled in it.");
+        funnyStuff.writeToFile("MyFunnyFile.txt");
 
-//        Scanner scan = new Scanner(System.in);
-//        String sentence = scan.nextLine();
-//        FunnyStuff fS = new FunnyStuff();
-//        fS.printNumbers(Integer.valueOf(sentence));
+        System.out.println("Reading file content in a loop.");
+        funnyStuff.readFromFile("MyFunnyFile.txt");
 
-        writeToFile();
-
+        System.out.println("Good bye!");
     }
 
-    private static void writeToFile() throws FileNotFoundException, InterruptedException {
-//        File file = new File("funnyData");
-        System.out.println("0RR");
-        PrintWriter pW = new PrintWriter("funnyData.txt");
-        System.out.println("1RR");
-        pW.println("Something interesting");
-        System.out.println("2RR");
-        Object o = new Object();
-        System.out.println("3RR");
-//        o.wait((long) 5000.0);
-        System.out.println("4RR");
-        pW.close();
-        System.out.println("5RR");
+    private void writeToFile(String fileName) throws FileNotFoundException {
+        PrintWriter printWriter = new PrintWriter(fileName);
+        printWriter.println("I am gonna to read this!");
+        printWriter.println("Second funny line");
+        printWriter.println("The end.");
+
+        printWriter.close();
     }
 
+    private void readFromFile(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
+        Scanner scanner = new Scanner(file);
 
-
-    public void printNumbers(int x) {
-        for (int i = 0; i <= x; i++) {
-            System.out.println(i);
+        for (int i = 0; i < 3; i++) {
+            String sentenceFromFile = scanner.nextLine();
+            System.out.println(sentenceFromFile);
         }
     }
 }
